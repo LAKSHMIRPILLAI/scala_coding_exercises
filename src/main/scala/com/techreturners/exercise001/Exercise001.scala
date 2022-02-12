@@ -9,7 +9,7 @@ class Exercise001 {
 
   def capitalizeWord(word: String): String = word.charAt(0).toUpper+word.substring(1)
 
-  def generateInitials(firstName: String, lastName: String)=firstName.charAt(0).toUpper+"."+lastName.charAt(0).toUpper
+  def generateInitials(firstName: String, lastName: String): String =firstName.charAt(0).toUpper+"."+lastName.charAt(0).toUpper
 
   def addVat(initialPrice: Double, interestRate: Double) : Double = Math.round(initialPrice*(1+interestRate/100)*100.0)/100.0
 
@@ -23,8 +23,15 @@ class Exercise001 {
    * @return
    */
   def countLinuxUsers(users: Seq[User]):Int= {
-    0
-
+    var cnt:Int=0
+    if (users!=null) {
+      for (e <- users) {
+        if (e.osType.toLowerCase == "linux")
+          cnt += 1
+      }
+    }
+    else cnt=0
+    cnt
   }
 
 }
