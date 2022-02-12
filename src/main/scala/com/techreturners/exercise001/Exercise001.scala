@@ -7,13 +7,13 @@ class Exercise001 {
   // we don't specify it in the code
   // https://docs.scala-lang.org/tour/basics.html
 
-  def capitalizeWord(word: String): String = ""
+  def capitalizeWord(word: String): String = word.charAt(0).toUpper+word.substring(1)
 
-  def generateInitials(firstName: String, lastName: String) = ""
+  def generateInitials(firstName: String, lastName: String)=firstName.charAt(0).toUpper+"."+lastName.charAt(0).toUpper
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = 0.0
+  def addVat(initialPrice: Double, interestRate: Double) : Double = Math.round(initialPrice*(1+interestRate/100)*100.0)/100.0
 
-  def reverse(sentence: String) : String = ""
+  def reverse(sentence: String) : String = sentence.reverse
 
   /**
    * Here we show using a Scala sequence which is a type of collection
@@ -22,9 +22,9 @@ class Exercise001 {
    * @param users A collection of users
    * @return
    */
-  def countLinuxUsers(users: Seq[User]): Int = {
-    // Add your code here
+  def countLinuxUsers(users: Seq[User]):Int= {
     0
+
   }
 
 }
